@@ -1,10 +1,16 @@
 .card{
-    background-color: rgba(187, 185, 185, 0.298);
+    /* background-color: rgba(187, 185, 185, 0.298); */
+    height: 35rem;
+    
     
 }
 
 .card-img-top{
     width: 180px;
     height: 180px;
+    
+}
+.container{
+  width: 55rem;
     
 }
