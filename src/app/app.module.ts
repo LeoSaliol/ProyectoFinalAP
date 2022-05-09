@@ -8,6 +8,11 @@ import { NavComponent } from './componentes/nav/nav.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { BodyComponent } from './componentes/body/body.component';
 import { HeaderComponent } from './componentes/body/compBody/header/header.component';
+import { ExperienciaComponent } from './componentes/body/compBody/experiencia/experiencia.component';
+import { AcercaDeComponent } from './componentes/body/compBody/acerca-de/acerca-de.component';
+import { EducacionComponent } from './componentes/body/compBody/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HardySkillComponent } from './componentes/body/compBody/hardy-skill/hardy-skill.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,11 +28,16 @@ const routes: Routes = [
     LoginComponent,
     BodyComponent,
     HeaderComponent,
+    ExperienciaComponent,
+    AcercaDeComponent,
+    EducacionComponent,
+    HardySkillComponent,
     
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgCircleProgressModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
