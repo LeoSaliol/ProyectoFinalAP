@@ -15,6 +15,7 @@ import { EducacionComponent } from './componentes/body/compBody/educacion/educac
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardySkillComponent } from './componentes/body/compBody/hardy-skill/hardy-skill.component';
 import { FooterComponent } from './componentes/body/compBody/footer/footer.component';
+import { ProyectosComponent } from './componentes/body/compBody/proyectos/proyectos.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
     EducacionComponent,
     HardySkillComponent,
     FooterComponent,
+    ProyectosComponent,
     
   ],
   imports: [
