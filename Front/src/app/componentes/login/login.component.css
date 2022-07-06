@@ -1,40 +1,29 @@
-/* .card {
-  
-  height: 35rem;
- }
-
-.card-img-top {
-  width: 180px;
-  height: 180px;
-}
-.container {
-  width: 55rem;
-}   */
-
 .d-flex{
   height: 70vh;
 }
 .form-control{
   color: #1a1c33;
 }
-
 .btn{
   color: rgb(42, 245, 238);
 
   border-color: rgba(42, 245, 184, 1);
 }
+
 .btn:hover{
   color: #1a1c33;
 }
+
 ::placeholder { color: rgba(42, 245, 184, 1); 
  background-color: #1a1c33;
 }
+
 .form-control{
   height: 3rem;
   background-color: #1a1c33;
   color: #FFF;
-  
 }
+
 .form-control:focus{
   box-shadow: -1px 1px 21px -9px rgba(42,245,200,0.48);
 -webkit-box-shadow: -1px 1px 21px -9px rgba(42,245,200,0.48);

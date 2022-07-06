@@ -2,6 +2,7 @@ package com.leonel.Leonel.Saliol.Controller;
 
 
 import com.leonel.Leonel.Saliol.Entity.Experiencia;
+import com.leonel.Leonel.Saliol.Entity.HarSk;
 import com.leonel.Leonel.Saliol.Interface.IExperienciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/experiencia")
 
 public class ExperienciaController {
 
@@ -16,24 +19,29 @@ public class ExperienciaController {
     IExperienciaService iexperienciaService;
 
 
-    @GetMapping("experiencias/traer")
+    @GetMapping("/traer")
     public List<Experiencia> getExperiencia(){
         return iexperienciaService.getExperiencia();
     }
 
-    @PostMapping("experiencias/crear")
+    @GetMapping("/traer/{id}")
+    public Experiencia findExperiencia(@PathVariable Long id){
+        return iexperienciaService.findExperiencia(id);
+    }
+
+    @PostMapping("/crear")
     public String createExperiencia(@RequestBody Experiencia experiencia){
         iexperienciaService.saveExperiencia(experiencia);
         return "La experiencia fue creada correctamente";
     }
 
-    @DeleteMapping("experiencias/borrar/{id}")
+    @DeleteMapping("/borrar/{id}")
     public String deleteExperiencias(@PathVariable Long id){
         iexperienciaService.deleteExperiencia(id);
         return "La experiencia fue borrada correctamente";
     }
 
-    @PutMapping("experiencias/editar/{id}")
+    @PutMapping("/editar/{id}")
     public Experiencia editExperiencia(@PathVariable Long id,
                                        @RequestParam("nomTra") String nuevoNom,
                                        @RequestParam("fechaIni") String nuevoFI,

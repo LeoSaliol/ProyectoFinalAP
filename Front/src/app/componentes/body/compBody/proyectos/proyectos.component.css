@@ -1,28 +1,31 @@
 
 .container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 
-.titulo{
-    
+.titulo{  
     text-align: center;
     margin: 8rem 0;
-
 }
+
 .card{
     border: 2px solid rgb(42, 245, 238);
-    
     margin: 2rem;
-    
+    transition: all 300ms;  
+}
+
+.card:hover{
+   transform: scale(1.20);
+   box-shadow: -1px 1px 21px -9px rgba(42,245,200,0.48);
+-webkit-box-shadow: -1px 1px 21px -9px rgba(42,245,200,0.48);
+-moz-box-shadow: -1px 1px 21px -9px rgba(42,245,200,0.48);
 }
 
 .btn{
-    color: rgb(42, 245, 238);
-    
+    color: rgb(42, 245, 238); 
     border-color: rgba(42, 245, 184, 1);
 }
 .btn:hover{

@@ -7,29 +7,31 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/acerca")
+
 
 public class AcercaController {
 
     @Autowired
     IAcercaService iacercaService;
 
-    @GetMapping("/acerca/traer")
-    public Acerca findAcerca(){
-        return iacercaService.findAcerca((long)1);
+    @GetMapping("/traer/{id}")
+    public Acerca findAcerca(@PathVariable Long id){
+        return iacercaService.findAcerca(id);
     }
-    @PostMapping ("/acerca/crear")
+    @PostMapping ("/crear")
     public String createAcerca(@RequestBody Acerca acerca){
         iacercaService.saveAcercaDeMi(acerca);
         return "La descripcion fue creada correctamente";
     }
 
-    @DeleteMapping ("/acerca/borrar/{id}")
+    @DeleteMapping ("/borrar/{id}")
     public String deleteAcerca(@PathVariable Long id){
         iacercaService.deleteAcerDeMi(id);
         return "La Descripcion fue eliminada correctamente";
     }
 
-    @PutMapping ("/acerca/editar/{id}")
+    @PutMapping ("/editar/{id}")
     public Acerca editAcerca(@PathVariable Long id,
                              @RequestParam("descripcion") String nuevaDescripcion){
         Acerca acerca = iacercaService.findAcerca(id);

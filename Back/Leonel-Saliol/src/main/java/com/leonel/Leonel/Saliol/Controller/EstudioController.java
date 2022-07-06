@@ -1,6 +1,7 @@
 package com.leonel.Leonel.Saliol.Controller;
 
 import com.leonel.Leonel.Saliol.Entity.Estudio;
+import com.leonel.Leonel.Saliol.Entity.HarSk;
 import com.leonel.Leonel.Saliol.Interface.IEstudioServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,31 +9,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/estudio")
 
 public class EstudioController {
 
     @Autowired
     IEstudioServices iestudioServices;
 
-    @GetMapping("estudio/traer")
+    @GetMapping("/traer")
     public List<Estudio> getEstudio(){
         return iestudioServices.getEstudio();
     }
 
+    @GetMapping("/traer/{id}")
+    public Estudio findEstudio(@PathVariable Long id){
+        return iestudioServices.findEstudio(id);
+    }
 
-    @PostMapping("estudio/crear")
+
+    @PostMapping("/crear")
     public String createEstudio(@RequestBody Estudio estudio){
         iestudioServices.saveEstudio(estudio);
         return "El estudio se creo correctamente!";
     }
 
-    @DeleteMapping ("estudio/borrar/{id}")
+    @DeleteMapping ("/borrar/{id}")
     public String deleteEstudio(@PathVariable Long id){
         iestudioServices.deleteEstudio(id);
         return "El estudio se elimino correctamente!";
     }
 
-    @PutMapping("estudio/editar/{id}")
+    @PutMapping("/editar/{id}")
     public Estudio editEstudio(@PathVariable Long id,
                               @RequestParam("nomEst") String nuevoEst,
                               @RequestParam("year") String nuevoYear,
