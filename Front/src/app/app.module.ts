@@ -16,6 +16,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardySkillComponent } from './componentes/body/compBody/hardy-skill/hardy-skill.component';
 import { FooterComponent } from './componentes/body/compBody/footer/footer.component';
 import { ProyectosComponent } from './componentes/body/compBody/proyectos/proyectos.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -38,12 +39,15 @@ const routes: Routes = [
     FooterComponent,
     ProyectosComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     NgCircleProgressModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

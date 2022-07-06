@@ -23,6 +23,5 @@ public class HarSk {
     private String title;
 
     @NotNull
-
     private int percent;
 }

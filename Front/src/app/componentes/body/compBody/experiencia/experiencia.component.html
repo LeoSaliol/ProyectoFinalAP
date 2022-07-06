@@ -2,52 +2,19 @@
   <article class="row">
     <h1 class="h1 fw-bold fs-1 ms">Experencia Laboral</h1>
 
-    <div class="col-lg-11 py-5 ps-5">
+    <div class="col-lg-11 py-5 ps-5" *ngFor="let experiencia of experiencias">
       <ul>
         <li>
-          <h2 class="h2">Trabajo1</h2>
+          <h2 class="h2">{{experiencia.nomTra}}</h2>
 
-          <h3 class="text-muted h3"> - (years)</h3>
+          <h3 class="text-muted h3"> - ({{experiencia.fechaIni}} / {{experiencia.fechaFin}} )</h3>
         </li>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
+          {{experiencia.descripcion}}
         </p>
       </ul>
-      <ul>
-        <li>
-          <h2 class="h2">Trabajo2</h2>
-
-          <h3 class="text-muted"> - (years)</h3>
-        </li>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
-        </p>
-      </ul>
-      <ul>
-        <li>
-          <h2 class="h2">Trabajo3</h2>
-
-          <h3 class="text-muted"> - (years)</h3>
-        </li>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
-        </p>
-      </ul>
+    
     </div>
   </article>
 </section>

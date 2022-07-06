@@ -31,7 +31,7 @@ public class Experiencia {
     private String fechaFin;
 
     @NotNull
-    @Size(min = 1, max = 250, message = "No cumple con los requisitos")
+    @Size(min = 1, max = 400, message = "No cumple con los requisitos")
     private String descripcion;
 
 }
