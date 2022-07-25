@@ -17,3 +17,7 @@ img {
 img:hover{
     transform: scale(1.20);
  }
+
+.logOut{
+    font-size: 0.90rem;
+}

@@ -19,9 +19,7 @@ export class AcercaDeComponent implements OnInit {
 
     this.personaService.getPersona().subscribe(data => {this.persona = data});
     
-    this.acercaService.getAcerca().subscribe(data => {
-      this.acerca = data
-    });
+    
     
   }
 

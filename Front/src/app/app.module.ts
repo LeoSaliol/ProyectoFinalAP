@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -17,13 +14,11 @@ import { HardySkillComponent } from './componentes/body/compBody/hardy-skill/har
 import { FooterComponent } from './componentes/body/compBody/footer/footer.component';
 import { ProyectosComponent } from './componentes/body/compBody/proyectos/proyectos.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { interceptorProvider } from './service/interceptor.service';
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'inicio', component: BodyComponent }, 
-  { path: '', component: BodyComponent, pathMatch: 'full' },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
-];
+
+
 
 @NgModule({
   declarations: [
@@ -43,13 +38,15 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     NgCircleProgressModule.forRoot(),
     HttpClientModule,
     FormsModule
     
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

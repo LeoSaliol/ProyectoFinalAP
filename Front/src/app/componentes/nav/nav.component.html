@@ -52,8 +52,13 @@
             class="d-inline-block align-text-top"
           />
         </a>
-        <button class="btn btn-outline-info mb-1 mt-3 mt-md-0 ms-md-3 fw-bold " routerLink="/login">
+        <button class="btn btn-outline-info mb-1 mt-3 mt-md-0 ms-md-3 fw-bold " (click)="login()" *ngIf="!isLogged">
           Login
+        </button>
+        <button
+        class="btn btn-outline-info mb-1 mt-3 mt-md-0 ms-md-3 fw-bold logOut" *ngIf="isLogged" 
+        (click)="onLogOut()">
+          Log Out
         </button>
       </div>
     </div>
