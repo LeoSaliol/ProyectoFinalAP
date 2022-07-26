@@ -1,5 +1,9 @@
+*{
+  background-color: #1a1c33;
+}
 .d-flex{
   height: 70vh;
+ 
 }
 .form-control{
   color: #1a1c33;

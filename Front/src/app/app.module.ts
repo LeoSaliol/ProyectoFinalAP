@@ -16,6 +16,9 @@ import { ProyectosComponent } from './componentes/body/compBody/proyectos/proyec
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { interceptorProvider } from './service/interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewExperienciaComponent } from './componentes/body/compBody/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './componentes/body/compBody/experiencia/edit-experiencia.component';
 
 
 
@@ -33,6 +36,8 @@ import { interceptorProvider } from './service/interceptor.service';
     HardySkillComponent,
     FooterComponent,
     ProyectosComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
     
     
   ],
@@ -41,7 +46,8 @@ import { interceptorProvider } from './service/interceptor.service';
     AppRoutingModule,
     NgCircleProgressModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
     
   ],
   providers: [

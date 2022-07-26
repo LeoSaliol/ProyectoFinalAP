@@ -1,20 +1,32 @@
 <section class="container">
   <article class="row">
-    <h1 class="h1 fw-bold fs-1 ms">Experencia Laboral</h1>
+  <div class="d-flex align-items-center ">
+      <h1 class="h1 fw-bold fs-1 ">Experencia Laboral</h1>
+      <button  routerLink="/nuevaexp" class="material-icons add ms-5" 
+      *ngIf="isLogged"> add </button>
+    
+  </div>
 
-    <div class="col-lg-11 py-5 ps-5" >
+    <div class="col-lg-11 py-5 ps-5" *ngFor="let Experiencia of expe">
       <ul>
-        <li>
-          <h2 class="h2">Repo</h2>
+        <li >
+          <h2 class="h2">{{ Experiencia.nombreE }}</h2>
 
-          <h3 class="text-muted h3"> - (yeras )</h3>
+          
         </li>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quaerat nisi, cumque veniam error nostrum neque mollitia velit fuga, ipsum quos iure aliquid recusandae dignissimos.
-        </p>
+        <div class="crud d-flex ">
+          <p class="me-auto">
+            {{ Experiencia.descripcionE }}
+          </p>
+
+          <button class="material-icons edit ms-3" *ngIf="isLogged" routerLink="/editexp/{{Experiencia.id}}" >edit</button>
+
+          <button class="ms-3 material-icons delete" *ngIf="isLogged">delete</button>
+
+
+        </div>
       </ul>
-    
     </div>
   </article>
 </section>

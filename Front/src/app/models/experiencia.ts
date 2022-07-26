@@ -1,17 +1,11 @@
 export class Experiencia{
-    id?:number;
-    nomTra:string;
-    fechaIni:string;
-    fechaFin:string;
-    descripcion:string;
+    id? : number;
+    nombreE : string;
+    descripcionE : string;
 
-    constructor(nomTra: string, fechaIni:string, fechaFin:string, descripcion:string){
-
-        this.nomTra = nomTra;
-        this.fechaIni = fechaIni;
-        this.fechaFin = fechaFin;
-        this.descripcion = descripcion;
+    constructor(nombreE: string, descripcionE:string){
+        this.nombreE = nombreE;
+        this.descripcionE = descripcionE;
     }
-    
 
 }
