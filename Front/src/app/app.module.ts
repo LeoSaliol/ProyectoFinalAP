@@ -22,6 +22,7 @@ import { EditExperienciaComponent } from './componentes/body/compBody/experienci
 import { EditPersonaComponent } from './componentes/body/compBody/acerca-de/edit-persona.component';
 import { NewEstudioComponent } from './componentes/body/compBody/educacion/new-estudio.component';
 import { EditEstudioComponent } from './componentes/body/compBody/educacion/edit-estudio.component';
+import { EditAcercaComponent } from './componentes/body/compBody/acerca-de/edit-acerca.component';
 
 
 
@@ -44,6 +45,7 @@ import { EditEstudioComponent } from './componentes/body/compBody/educacion/edit
     EditPersonaComponent,
     NewEstudioComponent,
     EditEstudioComponent,
+    EditAcercaComponent,
     
     
   ],

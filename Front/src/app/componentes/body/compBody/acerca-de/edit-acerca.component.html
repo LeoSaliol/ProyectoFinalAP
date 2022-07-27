@@ -1,0 +1,8 @@
+<form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="form-group">
+        <label for="descrip">Descripcion</label>
+        <input type="text" name="descrip" id="descrip" class="form-control" [(ngModel)]="acerca.descrip" required>
+    </div>
+  
+    <button class="btn btn-primary">Guardad</button>
+  </form>

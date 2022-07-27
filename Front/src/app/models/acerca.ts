@@ -1,8 +1,8 @@
 export class acerca{
     id?:number;
-    descripcion: String;
+    descrip: string;
 
-    constructor(descripcion: String){
-        this.descripcion = descripcion;
+    constructor(descrip: string){
+        this.descrip = descrip;
     }
 }

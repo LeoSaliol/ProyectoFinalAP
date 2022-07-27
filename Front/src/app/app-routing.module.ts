@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { BodyComponent } from "./componentes/body/body.component";
+import { EditAcercaComponent } from "./componentes/body/compBody/acerca-de/edit-acerca.component";
 import { EditPersonaComponent } from "./componentes/body/compBody/acerca-de/edit-persona.component";
 import { EditEstudioComponent } from "./componentes/body/compBody/educacion/edit-estudio.component";
 import { NewEstudioComponent } from "./componentes/body/compBody/educacion/new-estudio.component";
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'nuevaexp', component: NewExperienciaComponent},
     { path:'editexp/:id', component:EditExperienciaComponent},
     { path:'editper/:id', component:EditPersonaComponent},
+    { path:'editace/:id', component: EditAcercaComponent},
     { path: '', component: BodyComponent, pathMatch: 'full' },
     { path: '**', redirectTo: '/404', pathMatch: 'full' },
   ];

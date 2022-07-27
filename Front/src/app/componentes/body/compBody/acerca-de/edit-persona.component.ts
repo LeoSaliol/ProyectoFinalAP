@@ -10,11 +10,11 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class EditPersonaComponent implements OnInit {
 
-  persona: persona = null;
+  persona: persona = new persona("","","");
   constructor(private sPersona:PersonaService, private activateRouter:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    const id = this.activateRouter.snapshot.params['id'];
+    
     this.sPersona.getPersona().subscribe(
       data => {
         this.persona = data;

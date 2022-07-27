@@ -22,6 +22,7 @@ export class AcercaDeComponent implements OnInit {
   ngOnInit(): void {
 
     this.personaService.getPersona().subscribe(data => {this.persona = data});
+    this.acercaService.getAcerca().subscribe(data => {this.acerca = data});
 
     if(this.tokenService.getToken()){
       this.isLogged=true;
