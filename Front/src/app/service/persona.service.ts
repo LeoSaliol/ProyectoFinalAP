@@ -9,7 +9,7 @@ import { persona } from '../models/persona';
 })
 export class PersonaService {
 
-  URL = environment.apiBaseUrl+'/personas/';
+  URL = 'http://localhost:8080/personas/'
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +17,14 @@ export class PersonaService {
   public getPersona(): Observable<persona>{
     return this.http.get<persona>(this.URL+'traer/perfil');
   }
+
+  
+  public update(id:number, person:persona):Observable<any>{
+    return this.http.put<any>(this.URL+`editar/${id}`, person);
+   }
+
+   
+
+
 
 }

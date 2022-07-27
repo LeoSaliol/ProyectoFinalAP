@@ -22,7 +22,8 @@
 
           <button class="material-icons edit ms-3" *ngIf="isLogged" routerLink="/editexp/{{Experiencia.id}}" >edit</button>
 
-          <button class="ms-3 material-icons delete" *ngIf="isLogged">delete</button>
+          <button class="ms-3 material-icons delete" *ngIf="isLogged" 
+          (click)="delete(Experiencia.id)">delete</button>
 
 
         </div>

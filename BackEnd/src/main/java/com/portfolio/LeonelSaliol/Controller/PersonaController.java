@@ -1,10 +1,15 @@
 
 package com.portfolio.LeonelSaliol.Controller;
 
+import com.portfolio.LeonelSaliol.Dto.dtoPersona;
 import com.portfolio.LeonelSaliol.Entity.Persona;
 import com.portfolio.LeonelSaliol.Interface.IPersonaService;
 import java.util.List;
+
+import com.portfolio.LeonelSaliol.Security.Controller.Mensaje;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,22 +44,19 @@ public class PersonaController {
         ipersonaService.deletePersona(id);
         return "La persona fue eliminada correctamente";
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/personas/editar/{id}")
-    public Persona editPersona(@PathVariable Long id,
-                               @RequestParam("nombre") String nuevoNombre,
-                               @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam("img") String nuevoImg){
+    public ResponseEntity<?> editPersona(@PathVariable("id") Long id,
+                               @RequestBody dtoPersona dtoPerson){
         Persona persona = ipersonaService.findPersona(id);
-        
-        persona.setNombre(nuevoNombre);
-        persona.setApellido(nuevoApellido);
-        persona.setImg(nuevoImg);
-        
+
+        persona.setNombre(dtoPerson.getNombre());
+        persona.setApellido(dtoPerson.getApellido());
         ipersonaService.savePersona(persona);
-        return persona;
+        return new ResponseEntity<>(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
+
     
     @GetMapping("personas/traer/perfil")
     public Persona findPersona(){

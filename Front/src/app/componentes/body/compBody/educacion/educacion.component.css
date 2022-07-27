@@ -12,4 +12,31 @@ ul {
   p {
     padding-left: 15px;
   }
+  .edit{
+    border-radius: 50%;
+    border: 1px solid green;
+  }
+  .edit:hover{
+    background-color: green;
+  }
+  
+  .delete{
+    border-radius: 50%;
+    border: 1px solid red;
+  }
+  
+  .delete:hover{
+    background-color: red;
+  }
+  
+  .add{
+    border-radius: 50%;
+    height: 40px;
+    border: 1px solid rgb(33, 128, 230);
+  
+  }
+  
+  .add:hover{
+    background-color: rgb(33, 128, 230);
+  }
   

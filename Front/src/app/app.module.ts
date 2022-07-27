@@ -19,6 +19,9 @@ import { interceptorProvider } from './service/interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewExperienciaComponent } from './componentes/body/compBody/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './componentes/body/compBody/experiencia/edit-experiencia.component';
+import { EditPersonaComponent } from './componentes/body/compBody/acerca-de/edit-persona.component';
+import { NewEstudioComponent } from './componentes/body/compBody/educacion/new-estudio.component';
+import { EditEstudioComponent } from './componentes/body/compBody/educacion/edit-estudio.component';
 
 
 
@@ -38,6 +41,9 @@ import { EditExperienciaComponent } from './componentes/body/compBody/experienci
     ProyectosComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
+    EditPersonaComponent,
+    NewEstudioComponent,
+    EditEstudioComponent,
     
     
   ],

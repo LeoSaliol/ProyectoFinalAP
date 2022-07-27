@@ -1,52 +1,27 @@
 <section class="container">
   <article class="row">
-    <h1 class="h1 fs-1 fw-bold ms">Educacion</h1>
+    <div class="d-flex align-items-center ">
+      <h1 class="h1 fs-1 fw-bold ms">Educacion</h1>
+      <button  routerLink="/nuevaest" class="material-icons add ms-5" 
+      *ngIf="isLogged"> add </button>
+    </div>
 
-    <div class="col-lg-11 py-5 ps-5">
+    <div class="col-lg-11 py-5 ps-5" *ngFor="let Estudio of est">
       <ul>
         <li>
-          <h2 class="h2">Estudio 1</h2>
-
-          <h3 class="text-muted h3"> - (years)</h3>
+          <h2 class="h2">{{Estudio.nombreEs}}</h2>
         </li>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
+          {{Estudio.descripcionEs}}
         </p>
-      </ul>
-      <ul>
-        <li>
-          <h2 class="h2">Estudios 2</h2>
 
-          <h3 class="text-muted"> - (years)</h3>
-        </li>
+        
+        <button class="material-icons edit ms-3" *ngIf="isLogged" routerLink="/editest/{{Estudio.id}}" >edit</button>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
-        </p>
-      </ul>
-      <ul>
-        <li>
-          <h2 class="h2">Estudios 3</h2>
-
-          <h3 class="text-muted"> - (years)</h3>
-        </li>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et
-          incidunt, quia quae fugit dicta animi quam quaerat placeat,
-          reprehenderit tempora beatae, praesentium suscipit ducimus. Culpa,
-          cupiditate aspernatur dolorum veritatis reprehenderit, cumque ipsa rem
-          molestiae animi distinctio eos velit corrupti?
-        </p>
+        <button class="ms-3 material-icons delete" *ngIf="isLogged" 
+        (click)="delete(Estudio.id)"
+        >delete</button>
       </ul>
     </div>
   </article>
